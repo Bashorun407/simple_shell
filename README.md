@@ -259,6 +259,6 @@ The file should contain one command per line
 In this mode, the shell should not print a prompt and should not read from stdin
 
 CONTRIBUTORS
-Oluwaseyi Akinbobola
+Oluwaseyi Akinbobola,
 Chiamaka Irene Onyia
 
