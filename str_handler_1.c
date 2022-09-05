@@ -1,97 +1,104 @@
 #include "shell.h"
 /**
- ** _putchar - function that writes the character to stdout
- ** @c: The character to print
- ** Return: character to standard output
- **/
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
- ** _puts - function that prints a string
- ** @str: pointer to string
- ** Return: void
- **/
-void _puts(char *str)
-{
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		_putchar(str[i]);
-	}
-	_putchar('\n');
-}
-
-/**
- ** _strncpy - function that copies a string
- ** @dest: destination string
- ** @src: source string
- ** @n: number of charaters to be copied
- ** Return: copied strings
- **/
-char *_strncpy(char *dest, char *src, int n)
+ * _strcpy - function that copies a string
+ * @dest: destination
+ * @src: source
+ * Return: destination
+ */
+char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
 
-	while (i < n && *(src + i))
+	while (src[i])
 	{
-		*(dest + i) = *(src + i);
+		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
-	{
-		*(dest + i) = '\0';
-		i++;
-	}
+	dest[i] = '\0';
 	return (dest);
 }
-
 /**
- ** _strlen - function that counts the length of a string
- ** @s: string input
- ** Return: length of string
- **/
-int _strlen(char *s)
+ * _strcat - function that concatenates two strings
+ * @dest: first string
+ * @src: second string
+ * Return: first string + second string
+ */
+char *_strcat(char *dest, char *src)
 {
-	int i;
+	char *s = dest;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*dest != '\0')
 	{
-		continue;
+		dest++;
 	}
-	return (i);
-}
 
-/**
- ** _atoi - function to convert string to a integer
- ** @s: string input
- ** Return: converted integer
- **/
-int _atoi(char *s)
-{
-	int i = 0, j = 1, k;
-	unsigned int l = 0;
-
-	while (s[i] != '\0')
+	while (*src != '\0')
 	{
-		if (s[i] == '-')
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (s);
+}
+/**
+ * _strchr - function that locates character in a string
+ * @s: string to be searched
+ * @c: character to be located
+ * Return: pointer to character
+ */
+char *_strchr(char *s, char c)
+{
+	do {
+		if (*s == c)
 		{
-			return (2);
-		}
-		k = s[i] - '0';
-
-		if (l > 0 && !(k >= 0 && k <= 9))
 			break;
-
-		if (k >= 0 && k <= 9)
-			l = l * 10 + k;
-
-		i++;
-	}
-	l *= j;
-	return (l);
+		}
+	} while (*s++);
+	return (s);
 }
+/**
+ * _strncmp - function that compares n amount of characters of two strings
+ * @s1: first string
+ * @s2: second string
+ * @n: amount of characters to compare
+ * Return: 1 if the strings don't match otherwise 0
+ */
+int _strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t i;
 
+	if (s1 == NULL)
+		return (-1);
+
+	for (i = 0; i < n && s2[i]; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
+/**
+ * _strdup - duplicate a string
+ * @str: string
+ * Return: duplicated string or Null if failed
+ */
+char *_strdup(char *str)
+{
+	size_t len, i;
+	char *str2;
+
+	len = _strlen(str);
+	str2 = malloc(sizeof(char) * (len + 1));
+	if (!str2)
+	{
+		return (NULL);
+	}
+	for (i = 0; i <= len; i++)
+	{
+		str2[i] = str[i];
+	}
+	return (str2);
+}
