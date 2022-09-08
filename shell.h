@@ -133,4 +133,7 @@ void help_unsetenv(void);
 void help_history(void);
 
 int proc_file_commands(char *file_path, int *exe_ret);
+
+/* this header ends here */
 #endif /* _SHELL_H_ */
+
