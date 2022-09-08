@@ -184,3 +184,5 @@ void logical_ops(char *line, ssize_t *new_len)
 			(*new_len)++;
 	}
 }
+/* this is where the program ends */
+
