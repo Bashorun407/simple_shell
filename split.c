@@ -101,4 +101,6 @@ char **_strtok(char *line, char *delim)
 	ptr[t + 1] = NULL;
 
 	return (ptr);
+	/* this program ends here */
 }
+
