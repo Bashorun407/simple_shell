@@ -137,4 +137,6 @@ list_t *get_path_dir(char *path)
 	free(dirs);
 
 	return (head);
+	/* this program ends here */
 }
+
