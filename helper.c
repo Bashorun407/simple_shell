@@ -153,3 +153,6 @@ void variable_replacement(char **line, int *exe_ret)
 		}
 	}
 }
+
+/* this is where the program ends */
+
