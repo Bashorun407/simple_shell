@@ -207,3 +207,5 @@ int check_args(char **args)
 	}
 	return (0);
 }
+/* the program ends here */
+
