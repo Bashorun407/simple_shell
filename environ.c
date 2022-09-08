@@ -73,3 +73,6 @@ char **_getenv(const char *var)
 
 	return (NULL);
 }
+
+/* This is where the program ends */
+
