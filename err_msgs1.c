@@ -169,3 +169,6 @@ char *error_2_syntax(char **args)
 	free(hist_str);
 	return (error);
 }
+
+/* this is where the program ends */
+
